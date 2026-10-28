@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Edit Question</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+<div class="min-h-screen">
+
+    <!-- Header -->
+    <header class="bg-white border-b border-gray-200">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex items-center gap-4 h-16">
+
+                <!-- Back Button -->
+                <a href="#"
+                   class="flex items-center justify-center w-10 h-10
+                          rounded-lg text-gray-600
+                          hover:bg-gray-100 hover:text-blue-600">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke-width="2"
+                         stroke="currentColor"
+                         class="w-5 h-5">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M15.75 19.5L8.25 12l7.5-7.5" />
+
+                    </svg>
+
+                </a>
+
+                <div>
+                    <h1 class="text-lg sm:text-xl font-bold text-gray-900">
+                        Edit Question
+                    </h1>
+
+                    <p class="text-xs sm:text-sm text-gray-500">
+                        Python Fundamentals Quiz
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Heading -->
+        <div class="mb-6">
+
+            <div class="flex items-center gap-2 mb-2">
+
+                <span class="inline-flex items-center justify-center
+                             w-8 h-8 rounded-lg bg-blue-50
+                             text-blue-700 font-bold text-sm">
+                    3
+                </span>
+
+                <h2 class="text-2xl font-bold text-gray-900">
+                    Edit Question
+                </h2>
+
+            </div>
+
+            <p class="text-sm text-gray-500">
+                Update the question, options, marks, or explanation.
+            </p>
+
+        </div>
+
+
+        <!-- Form -->
+        <form method="POST" action="#">
+
+            <!-- {% csrf_token %} -->
+
+
+            <!-- Question Details -->
+            <div class="bg-white border border-gray-200
+                        rounded-xl shadow-sm p-5 sm:p-6 mb-6">
+
+                <div class="flex items-center gap-3 mb-6">
+
+                    <div class="w-10 h-10 rounded-lg bg-blue-50
+                                flex items-center justify-center
+                                text-blue-600">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke-width="2"
+                             stroke="currentColor"
+                             class="w-5 h-5">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M9.879 7.5l.08-.12
+                                     a3 3 0 015.282 0l.08.12
+                                     m-5.522 0a3 3 0 00-2.58
+                                     4.75l.69.92a3 3 0 01.6
+                                     1.8v.03h6.982v-.03a3
+                                     3 0 01.6-1.8l.69-.92
+                                     a3 3 0 00-2.58-4.75" />
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M9 18h6m-5 3h4" />
+
+                        </svg>
+
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-gray-900">
+                            Question Details
+                        </h3>
+
+                        <p class="text-sm text-gray-500">
+                            Modify the question information.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Question Type -->
+                <div class="mb-5">
+
+                    <label class="block text-sm font-medium
+                                  text-gray-700 mb-2">
+
+                        Question Type
+
+                    </label>
+
+                    <select name="question_type"
+                            class="w-full px-4 py-3 rounded-lg
+                                   border border-gray-300
+                                   bg-white outline-none
+                                   focus:ring-2 focus:ring-blue-500
+                                   focus:border-blue-500">
+
+                        <option value="mcq" selected>
+                            Multiple Choice
+                        </option>
+
+                        <option value="true_false">
+                            True / False
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Question -->
+                <div class="mb-5">
+
+                    <label class="block text-sm font-medium
+                                  text-gray-700 mb-2">
+
+                        Question
+
+                    </label>
+
+                    <textarea name="question_text"
+                              rows="4"
+                              class="w-full px-4 py-3 rounded-lg
+                                     border border-gray-300
+                                     resize-none outline-none
+                                     focus:ring-2 focus:ring-blue-500
+                                     focus:border-blue-500">Which data type is used to store a collection of key-value pairs?</textarea>
+
+                </div>
+
+
+                <!-- Marks -->
+                <div class="max-w-xs">
+
+                    <label class="block text-sm font-medium
+                                  text-gray-700 mb-2">
+
+                        Marks
+
+                    </label>
+
+                    <input type="number"
+                           name="marks"
+                           value="2"
+                           min="1"
+                           class="w-full px-4 py-3 rounded-lg
+                                  border border-gray-300
+                                  outline-none
+                                  focus:ring-2 focus:ring-blue-500
+                                  focus:border-blue-500">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Options -->
+            <div class="bg-white border border-gray-200
+                        rounded-xl shadow-sm p-5 sm:p-6 mb-6">
+
+                <div class="flex items-center gap-3 mb-6">
+
+                    <div class="w-10 h-10 rounded-lg bg-green-50
+                                flex items-center justify-center
+                                text-green-600">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke-width="2"
+                             stroke="currentColor"
+                             class="w-5 h-5">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M9 12.75L11.25 15
+                                     15 9.75M21 12a9 9
+                                     0 11-18 0 9 9
+                                     0 0118 0z" />
+
+                        </svg>
+
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-gray-900">
+                            Answer Options
+                        </h3>
+
+                        <p class="text-sm text-gray-500">
+                            Select the correct answer.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- Option A -->
+                <div class="mb-4">
+
+                    <label class="flex items-center gap-3">
+
+                        <input type="radio"
+                               name="correct_option"
+                               value="A"
+                               class="w-5 h-5 text-blue-600
+                                      border-gray-300
+                                      focus:ring-blue-500">
+
+                        <span class="font-semibold text-gray-700
+                                     w-5">
+                            A
+                        </span>
+
+                        <input type="text"
+                               name="option_a"
+                               value="List"
+                               class="flex-1 px-4 py-3 rounded-lg
+                                      border border-gray-300
+                                      outline-none
+                                      focus:ring-2 focus:ring-blue-500
+                                      focus:border-blue-500">
+
+                    </label>
+
+                </div>
+
+
+                <!-- Option B - Correct -->
+                <div class="mb-4">
+
+                    <label class="flex items-center gap-3">
+
+                        <input type="radio"
+                               name="correct_option"
+                               value="B"
+                               checked
+                               class="w-5 h-5 text-blue-600
+                                      border-gray-300
+                                      focus:ring-blue-500">
+
+                        <span class="font-semibold text-gray-700
+                                     w-5">
+                            B
+                        </span>
+
+                        <input type="text"
+                               name="option_b"
+                               value="Dictionary"
+                               class="flex-1 px-4 py-3 rounded-lg
+                                      border border-green-400
+                                      bg-green-50
+                                      outline-none
+                                      focus:ring-2 focus:ring-blue-500
+                                      focus:border-blue-500">
+
+                    </label>
+
+                    <div class="ml-12 mt-2">
+
+                        <span class="inline-flex items-center gap-1
+                                     text-xs font-medium
+                                     text-green-700">
+
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke-width="2"
+                                 stroke="currentColor"
+                                 class="w-4 h-4">
+
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M9 12.75L11.25 15
+                                         15 9.75" />
+
+                                <circle cx="12"
+                                        cy="12"
+                                        r="9" />
+
+                            </svg>
+
+                            Current Correct Answer
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Option C -->
+                <div class="mb-4">
+
+                    <label class="flex items-center gap-3">
+
+                        <input type="radio"
+                               name="correct_option"
+                               value="C"
+                               class="w-5 h-5 text-blue-600
+                                      border-gray-300
+                                      focus:ring-blue-500">
+
+                        <span class="font-semibold text-gray-700
+                                     w-5">
+                            C
+                        </span>
+
+                        <input type="text"
+                               name="option_c"
+                               value="Tuple"
+                               class="flex-1 px-4 py-3 rounded-lg
+                                      border border-gray-300
+                                      outline-none
+                                      focus:ring-2 focus:ring-blue-500
+                                      focus:border-blue-500">
+
+                    </label>
+
+                </div>
+
+
+                <!-- Option D -->
+                <div>
+
+                    <label class="flex items-center gap-3">
+
+                        <input type="radio"
+                               name="correct_option"
+                               value="D"
+                               class="w-5 h-5 text-blue-600
+                                      border-gray-300
+                                      focus:ring-blue-500">
+
+                        <span class="font-semibold text-gray-700
+                                     w-5">
+                            D
+                        </span>
+
+                        <input type="text"
+                               name="option_d"
+                               value="Set"
+                               class="flex-1 px-4 py-3 rounded-lg
+                                      border border-gray-300
+                                      outline-none
+                                      focus:ring-2 focus:ring-blue-500
+                                      focus:border-blue-500">
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Explanation -->
+            <div class="bg-white border border-gray-200
+                        rounded-xl shadow-sm p-5 sm:p-6 mb-6">
+
+                <div class="mb-4">
+
+                    <h3 class="font-semibold text-gray-900">
+                        Explanation
+                    </h3>
+
+                    <p class="text-sm text-gray-500 mt-1">
+                        Explain why the selected answer is correct.
+                    </p>
+
+                </div>
+
+
+                <textarea name="explanation"
+                          rows="4"
+                          class="w-full px-4 py-3 rounded-lg
+                                 border border-gray-300
+                                 resize-none outline-none
+                                 focus:ring-2 focus:ring-blue-500
+                                 focus:border-blue-500">A dictionary stores data in key-value pairs in Python.</textarea>
+
+            </div>
+
+
+
+            <!-- Danger Zone -->
+            <div class="bg-red-50 border border-red-200
+                        rounded-xl p-5 sm:p-6 mb-6">
+
+                <div class="flex flex-col sm:flex-row
+                            sm:items-center sm:justify-between gap-4">
+
+                    <div>
+
+                        <h3 class="font-semibold text-red-800">
+                            Delete Question
+                        </h3>
+
+                        <p class="text-sm text-red-600 mt-1">
+                            This action cannot be undone.
+                        </p>
+
+                    </div>
+
+                    <button type="button"
+                            class="px-4 py-2.5 rounded-lg
+                                   border border-red-300
+                                   text-sm font-medium
+                                   text-red-700
+                                   hover:bg-red-100">
+
+                        Delete Question
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Buttons -->
+            <div class="flex flex-col-reverse sm:flex-row
+                        sm:justify-end gap-3">
+
+                <a href="#"
+                   class="inline-flex items-center justify-center
+                          px-6 py-3 rounded-lg
+                          border border-gray-300
+                          text-sm font-medium
+                          text-gray-700
+                          hover:bg-gray-50">
+
+                    Cancel
+
+                </a>
+
+
+                <button type="submit"
+                        class="inline-flex items-center justify-center
+                               gap-2 px-6 py-3 rounded-lg
+                               bg-blue-600 text-white
+                               text-sm font-semibold
+                               hover:bg-blue-700
+                               transition">
+
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         fill="none"
+                         viewBox="0 0 24 24"
+                         stroke-width="2"
+                         stroke="currentColor"
+                         class="w-5 h-5">
+
+                        <path stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M5.25 12.75l3 3
+                                 10.5-10.5" />
+
+                    </svg>
+
+                    Update Question
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Quiz Dashboard</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Optional Tailwind configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Header -->
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+
+            <div>
+                <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">
+                    Quiz Management
+                </h1>
+
+                <p class="mt-1 text-gray-500">
+                    Create, manage and monitor your quizzes.
+                </p>
+            </div>
+
+            <!-- Create Quiz Button -->
+            <a href="#"
+               class="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-3 rounded-lg shadow-sm transition">
+
+                <!-- Plus Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="w-5 h-5"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor"
+                     stroke-width="2">
+
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M12 4v16m8-8H4"/>
+                </svg>
+
+                Create Quiz
+            </a>
+
+        </div>
+
+
+        <!-- Statistics Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+
+            <!-- Total Quizzes -->
+            <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+
+                <div class="flex items-center justify-between">
+
+                    <div>
+                        <p class="text-sm text-gray-500">
+                            Total Quizzes
+                        </p>
+
+                        <h2 class="text-3xl font-bold text-gray-900 mt-2">
+                            12
+                        </h2>
+                    </div>
+
+                    <div class="w-11 h-11 rounded-lg bg-blue-100 flex items-center justify-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="w-6 h-6 text-blue-600"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h6l5 5v11a2 2 0 01-2 2z"/>
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Published -->
+            <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+
+                <div class="flex items-center justify-between">
+
+                    <div>
+                        <p class="text-sm text-gray-500">
+                            Published
+                        </p>
+
+                        <h2 class="text-3xl font-bold text-gray-900 mt-2">
+                            8
+                        </h2>
+                    </div>
+
+                    <div class="w-11 h-11 rounded-lg bg-green-100 flex items-center justify-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="w-6 h-6 text-green-600"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M5 13l4 4L19 7"/>
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Drafts -->
+            <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+
+                <div class="flex items-center justify-between">
+
+                    <div>
+                        <p class="text-sm text-gray-500">
+                            Drafts
+                        </p>
+
+                        <h2 class="text-3xl font-bold text-gray-900 mt-2">
+                            4
+                        </h2>
+                    </div>
+
+                    <div class="w-11 h-11 rounded-lg bg-yellow-100 flex items-center justify-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="w-6 h-6 text-yellow-600"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.5-8.5a2.121 2.121 0 013 3L12 12l-4 1 1-4 6.5-6.5z"/>
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Total Attempts -->
+            <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+
+                <div class="flex items-center justify-between">
+
+                    <div>
+                        <p class="text-sm text-gray-500">
+                            Total Attempts
+                        </p>
+
+                        <h2 class="text-3xl font-bold text-gray-900 mt-2">
+                            245
+                        </h2>
+                    </div>
+
+                    <div class="w-11 h-11 rounded-lg bg-purple-100 flex items-center justify-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="w-6 h-6 text-purple-600"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M17 20h5v-2a4 4 0 00-4-4h-1M9 20H4v-2a4 4 0 014-4h1m4-4a4 4 0 100-8 4 4 0 000 8zm6 0a3 3 0 100-6 3 3 0 000 6zM7 10a3 3 0 100-6 3 3 0 000 6z"/>
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Quiz Section -->
+        <div class="bg-white rounded-xl border border-gray-200 shadow-sm">
+
+            <!-- Section Header -->
+            <div class="px-5 sm:px-6 py-5 border-b border-gray-200">
+
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+
+                    <div>
+                        <h2 class="text-lg font-semibold text-gray-900">
+                            My Quizzes
+                        </h2>
+
+                        <p class="text-sm text-gray-500 mt-1">
+                            Manage your created quizzes.
+                        </p>
+                    </div>
+
+                    <!-- Search -->
+                    <div class="relative">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M21 21l-4.35-4.35m2.35-5.65a8 8 0 11-16 0 8 8 0 0116 0z"/>
+
+                        </svg>
+
+                        <input
+                            type="text"
+                            placeholder="Search quizzes..."
+                            class="w-full sm:w-64 pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Desktop Table -->
+            <div class="hidden md:block overflow-x-auto">
+
+                <table class="w-full text-sm">
+
+                    <thead class="bg-gray-50 border-b border-gray-200">
+
+                        <tr>
+
+                            <th class="text-left px-6 py-4 font-semibold text-gray-600">
+                                Quiz
+                            </th>
+
+                            <th class="text-left px-6 py-4 font-semibold text-gray-600">
+                                Subject
+                            </th>
+
+                            <th class="text-center px-6 py-4 font-semibold text-gray-600">
+                                Questions
+                            </th>
+
+                            <th class="text-center px-6 py-4 font-semibold text-gray-600">
+                                Attempts
+                            </th>
+
+                            <th class="text-center px-6 py-4 font-semibold text-gray-600">
+                                Status
+                            </th>
+
+                            <th class="text-right px-6 py-4 font-semibold text-gray-600">
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody class="divide-y divide-gray-100">
+
+
+                        <!-- Quiz 1 -->
+                        <tr class="hover:bg-gray-50 transition">
+
+                            <td class="px-6 py-5">
+
+                                <div>
+                                    <p class="font-semibold text-gray-900">
+                                        Python Basics
+                                    </p>
+
+                                    <p class="text-xs text-gray-500 mt-1">
+                                        Created Sep 4, 2026
+                                    </p>
+                                </div>
+
+                            </td>
+
+
+                            <td class="px-6 py-5 text-gray-600">
+                                Python
+                            </td>
+
+
+                            <td class="px-6 py-5 text-center text-gray-600">
+                                20
+                            </td>
+
+
+                            <td class="px-6 py-5 text-center text-gray-600">
+                                45
+                            </td>
+
+
+                            <td class="px-6 py-5 text-center">
+
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
+                                    Published
+                                </span>
+
+                            </td>
+
+
+                            <td class="px-6 py-5">
+
+                                <div class="flex items-center justify-end gap-2">
+
+                                    <a href="#"
+                                       class="px-3 py-1.5 text-xs font-medium text-blue-600 hover:bg-blue-50 rounded-md">
+                                        View
+                                    </a>
+
+                                    <a href="#"
+                                       class="px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100 rounded-md">
+                                        Edit
+                                    </a>
+
+                                    <a href="#"
+                                       class="px-3 py-1.5 text-xs font-medium text-purple-600 hover:bg-purple-50 rounded-md">
+                                        Results
+                                    </a>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Quiz 2 -->
+                        <tr class="hover:bg-gray-50 transition">
+
+                            <td class="px-6 py-5">
+
+                                <div>
+
+                                    <p class="font-semibold text-gray-900">
+                                        Django Fundamentals
+                                    </p>
+
+                                    <p class="text-xs text-gray-500 mt-1">
+                                        Created Sep 3, 2026
+                                    </p>
+
+                                </div>
+
+                            </td>
+
+
+                            <td class="px-6 py-5 text-gray-600">
+                                Django
+                            </td>
+
+
+                            <td class="px-6 py-5 text-center text-gray-600">
+                                15
+                            </td>
+
+
+                            <td class="px-6 py-5 text-center text-gray-600">
+                                32
+                            </td>
+
+
+                            <td class="px-6 py-5 text-center">
+
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-700">
+                                    Draft
+                                </span>
+
+                            </td>
+
+
+                            <td class="px-6 py-5">
+
+                                <div class="flex items-center justify-end gap-2">
+
+                                    <a href="#"
+                                       class="px-3 py-1.5 text-xs font-medium text-blue-600 hover:bg-blue-50 rounded-md">
+                                        View
+                                    </a>
+
+                                    <a href="#"
+                                       class="px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100 rounded-md">
+                                        Edit
+                                    </a>
+
+                                    <a href="#"
+                                       class="px-3 py-1.5 text-xs font-medium text-red-600 hover:bg-red-50 rounded-md">
+                                        Delete
+                                    </a>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+
+                        <!-- Quiz 3 -->
+                        <tr class="hover:bg-gray-50 transition">
+
+                            <td class="px-6 py-5">
+
+                                <div>
+
+                                    <p class="font-semibold text-gray-900">
+                                        HTML & CSS Quiz
+                                    </p>
+
+                                    <p class="text-xs text-gray-500 mt-1">
+                                        Created Aug 30, 2026
+                                    </p>
+
+                                </div>
+
+                            </td>
+
+
+                            <td class="px-6 py-5 text-gray-600">
+                                Web Development
+                            </td>
+
+
+                            <td class="px-6 py-5 text-center text-gray-600">
+                                25
+                            </td>
+
+
+                            <td class="px-6 py-5 text-center text-gray-600">
+                                67
+                            </td>
+
+
+                            <td class="px-6 py-5 text-center">
+
+                                <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
+                                    Published
+                                </span>
+
+                            </td>
+
+
+                            <td class="px-6 py-5">
+
+                                <div class="flex items-center justify-end gap-2">
+
+                                    <a href="#"
+                                       class="px-3 py-1.5 text-xs font-medium text-blue-600 hover:bg-blue-50 rounded-md">
+                                        View
+                                    </a>
+
+                                    <a href="#"
+                                       class="px-3 py-1.5 text-xs font-medium text-gray-600 hover:bg-gray-100 rounded-md">
+                                        Edit
+                                    </a>
+
+                                    <a href="#"
+                                       class="px-3 py-1.5 text-xs font-medium text-purple-600 hover:bg-purple-50 rounded-md">
+                                        Results
+                                    </a>
+
+                                </div>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <!-- Mobile Cards -->
+            <div class="md:hidden divide-y divide-gray-100">
+
+                <!-- Mobile Quiz 1 -->
+                <div class="p-5">
+
+                    <div class="flex items-start justify-between gap-3">
+
+                        <div>
+                            <h3 class="font-semibold text-gray-900">
+                                Python Basics
+                            </h3>
+
+                            <p class="text-sm text-gray-500 mt-1">
+                                Python
+                            </p>
+                        </div>
+
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-green-100 text-green-700">
+                            Published
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-5 mt-4 text-sm text-gray-500">
+
+                        <span>
+                            20 Questions
+                        </span>
+
+                        <span>
+                            45 Attempts
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex gap-2 mt-4">
+
+                        <a href="#"
+                           class="flex-1 text-center px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg">
+                            View
+                        </a>
+
+                        <a href="#"
+                           class="flex-1 text-center px-3 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg">
+                            Edit
+                        </a>
+
+                        <a href="#"
+                           class="flex-1 text-center px-3 py-2 text-sm font-medium text-purple-600 bg-purple-50 rounded-lg">
+                            Results
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Mobile Quiz 2 -->
+                <div class="p-5">
+
+                    <div class="flex items-start justify-between gap-3">
+
+                        <div>
+
+                            <h3 class="font-semibold text-gray-900">
+                                Django Fundamentals
+                            </h3>
+
+                            <p class="text-sm text-gray-500 mt-1">
+                                Django
+                            </p>
+
+                        </div>
+
+                        <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-700">
+                            Draft
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex items-center gap-5 mt-4 text-sm text-gray-500">
+
+                        <span>
+                            15 Questions
+                        </span>
+
+                        <span>
+                            32 Attempts
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex gap-2 mt-4">
+
+                        <a href="#"
+                           class="flex-1 text-center px-3 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-lg">
+                            View
+                        </a>
+
+                        <a href="#"
+                           class="flex-1 text-center px-3 py-2 text-sm font-medium text-gray-600 bg-gray-100 rounded-lg">
+                            Edit
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Pagination -->
+            <div class="px-5 sm:px-6 py-4 border-t border-gray-200 flex items-center justify-between">
+
+                <p class="text-sm text-gray-500">
+                    Showing <span class="font-medium text-gray-700">1–3</span> of
+                    <span class="font-medium text-gray-700">12</span> quizzes
+                </p>
+
+
+                <div class="flex items-center gap-2">
+
+                    <button
+                        class="px-3 py-2 text-sm border border-gray-300 rounded-lg text-gray-500 hover:bg-gray-50">
+                        Previous
+                    </button>
+
+                    <button
+                        class="px-3 py-2 text-sm bg-blue-600 text-white rounded-lg">
+                        1
+                    </button>
+
+                    <button
+                        class="px-3 py-2 text-sm border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
+                        2
+                    </button>
+
+                    <button
+                        class="px-3 py-2 text-sm border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
+                        3
+                    </button>
+
+                    <button
+                        class="px-3 py-2 text-sm border border-gray-300 rounded-lg text-gray-600 hover:bg-gray-50">
+                        Next
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

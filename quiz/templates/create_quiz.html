@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Quiz</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Main Container -->
+    <main class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <!-- Page Header -->
+        <div class="mb-8">
+
+            <!-- Back Button -->
+            <a href="#"
+               class="inline-flex items-center gap-2 text-sm text-gray-500 hover:text-blue-600 transition mb-5">
+
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     class="w-5 h-5"
+                     fill="none"
+                     viewBox="0 0 24 24"
+                     stroke="currentColor"
+                     stroke-width="2">
+
+                    <path stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M15 19l-7-7 7-7"/>
+
+                </svg>
+
+                Back to Quizzes
+            </a>
+
+
+            <h1 class="text-2xl sm:text-3xl font-bold text-gray-900">
+                Create New Quiz
+            </h1>
+
+            <p class="mt-2 text-gray-500">
+                Add the basic information for your quiz.
+            </p>
+
+        </div>
+
+
+        <!-- Form Card -->
+        <div class="bg-white border border-gray-200 rounded-xl shadow-sm overflow-hidden">
+
+            <!-- Card Header -->
+            <div class="px-5 sm:px-8 py-5 border-b border-gray-200">
+
+                <div class="flex items-center gap-3">
+
+                    <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="w-5 h-5 text-blue-600"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a3 3 0 016 0M9 5h6"/>
+
+                        </svg>
+
+                    </div>
+
+                    <div>
+                        <h2 class="font-semibold text-gray-900">
+                            Quiz Information
+                        </h2>
+
+                        <p class="text-sm text-gray-500">
+                            Enter the details students will see.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Form -->
+            <form method="POST" action="#" class="p-5 sm:p-8">
+
+                <!-- Django CSRF -->
+                <!-- {% csrf_token %} -->
+
+
+                <!-- Quiz Title -->
+                <div class="mb-6">
+
+                    <label for="title"
+                           class="block text-sm font-medium text-gray-700 mb-2">
+                        Quiz Title
+                        <span class="text-red-500">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        name="title"
+                        placeholder="e.g. Python Basics Quiz"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm
+                               focus:outline-none focus:ring-2 focus:ring-blue-500
+                               focus:border-blue-500
+                               placeholder:text-gray-400">
+
+                    <p class="mt-1.5 text-xs text-gray-500">
+                        Give your quiz a clear and meaningful name.
+                    </p>
+
+                </div>
+
+
+                <!-- Subject -->
+                <div class="mb-6">
+
+                    <label for="subject"
+                           class="block text-sm font-medium text-gray-700 mb-2">
+                        Subject
+                        <span class="text-red-500">*</span>
+                    </label>
+
+                    <select
+                        id="subject"
+                        name="subject"
+                        required
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm
+                               bg-white
+                               focus:outline-none focus:ring-2 focus:ring-blue-500
+                               focus:border-blue-500">
+
+                        <option value="">
+                            Select Subject
+                        </option>
+
+                        <option value="python">
+                            Python
+                        </option>
+
+                        <option value="django">
+                            Django
+                        </option>
+
+                        <option value="html_css">
+                            HTML & CSS
+                        </option>
+
+                        <option value="javascript">
+                            JavaScript
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Description -->
+                <div class="mb-6">
+
+                    <label for="description"
+                           class="block text-sm font-medium text-gray-700 mb-2">
+
+                        Description
+
+                    </label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="4"
+                        placeholder="Describe what this quiz covers..."
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg text-sm
+                               resize-none
+                               focus:outline-none focus:ring-2 focus:ring-blue-500
+                               focus:border-blue-500
+                               placeholder:text-gray-400"></textarea>
+
+                    <p class="mt-1.5 text-xs text-gray-500">
+                        This description will be visible to students before they start.
+                    </p>
+
+                </div>
+
+
+                <!-- Divider -->
+                <div class="border-t border-gray-200 my-8"></div>
+
+
+                <!-- Quiz Settings -->
+                <div class="mb-6">
+
+                    <h3 class="text-lg font-semibold text-gray-900">
+                        Quiz Settings
+                    </h3>
+
+                    <p class="text-sm text-gray-500 mt-1">
+                        Configure how students can take the quiz.
+                    </p>
+
+                </div>
+
+
+                <!-- Settings Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+
+                    <!-- Duration -->
+                    <div>
+
+                        <label for="duration"
+                               class="block text-sm font-medium text-gray-700 mb-2">
+
+                            Duration
+                            <span class="text-red-500">*</span>
+
+                        </label>
+
+                        <div class="flex">
+
+                            <input
+                                type="number"
+                                id="duration"
+                                name="duration"
+                                min="1"
+                                value="30"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-l-lg text-sm
+                                       focus:outline-none focus:ring-2 focus:ring-blue-500
+                                       focus:border-blue-500">
+
+                            <span class="inline-flex items-center px-4 bg-gray-100
+                                         border border-l-0 border-gray-300
+                                         rounded-r-lg text-sm text-gray-500">
+                                minutes
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Attempts -->
+                    <div>
+
+                        <label for="attempts"
+                               class="block text-sm font-medium text-gray-700 mb-2">
+
+                            Attempts Allowed
+                            <span class="text-red-500">*</span>
+
+                        </label>
+
+                        <select
+                            id="attempts"
+                            name="attempts"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                                   bg-white text-sm
+                                   focus:outline-none focus:ring-2 focus:ring-blue-500
+                                   focus:border-blue-500">
+
+                            <option value="1">
+                                1 Attempt
+                            </option>
+
+                            <option value="2">
+                                2 Attempts
+                            </option>
+
+                            <option value="3">
+                                3 Attempts
+                            </option>
+
+                            <option value="unlimited">
+                                Unlimited
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Start Date -->
+                    <div>
+
+                        <label for="start_date"
+                               class="block text-sm font-medium text-gray-700 mb-2">
+
+                            Start Date
+                            <span class="text-red-500">*</span>
+
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="start_date"
+                            name="start_date"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                                   text-sm
+                                   focus:outline-none focus:ring-2 focus:ring-blue-500
+                                   focus:border-blue-500">
+
+                        <p class="mt-1.5 text-xs text-gray-500">
+                            Students can start the quiz after this time.
+                        </p>
+
+                    </div>
+
+
+                    <!-- End Date -->
+                    <div>
+
+                        <label for="end_date"
+                               class="block text-sm font-medium text-gray-700 mb-2">
+
+                            End Date
+                            <span class="text-red-500">*</span>
+
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="end_date"
+                            name="end_date"
+                            required
+                            class="w-full px-4 py-3 border border-gray-300 rounded-lg
+                                   text-sm
+                                   focus:outline-none focus:ring-2 focus:ring-blue-500
+                                   focus:border-blue-500">
+
+                        <p class="mt-1.5 text-xs text-gray-500">
+                            Students cannot start the quiz after this time.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Divider -->
+                <div class="border-t border-gray-200 my-8"></div>
+
+
+                <!-- Additional Settings -->
+                <div class="mb-6">
+
+                    <h3 class="text-lg font-semibold text-gray-900">
+                        Additional Settings
+                    </h3>
+
+                    <p class="text-sm text-gray-500 mt-1">
+                        Choose how the quiz should behave.
+                    </p>
+
+                </div>
+
+
+                <!-- Settings Options -->
+                <div class="space-y-4">
+
+
+                    <!-- Show Result -->
+                    <label class="flex items-start gap-3 p-4 border border-gray-200
+                                  rounded-lg cursor-pointer hover:bg-gray-50 transition">
+
+                        <input
+                            type="checkbox"
+                            name="show_result"
+                            checked
+                            class="mt-1 w-4 h-4 text-blue-600 border-gray-300
+                                   rounded focus:ring-blue-500">
+
+                        <div>
+
+                            <p class="text-sm font-medium text-gray-800">
+                                Show result after submission
+                            </p>
+
+                            <p class="text-xs text-gray-500 mt-1">
+                                Students can see their score immediately after submitting.
+                            </p>
+
+                        </div>
+
+                    </label>
+
+
+                    <!-- Show Correct Answers -->
+                    <label class="flex items-start gap-3 p-4 border border-gray-200
+                                  rounded-lg cursor-pointer hover:bg-gray-50 transition">
+
+                        <input
+                            type="checkbox"
+                            name="show_answers"
+                            class="mt-1 w-4 h-4 text-blue-600 border-gray-300
+                                   rounded focus:ring-blue-500">
+
+                        <div>
+
+                            <p class="text-sm font-medium text-gray-800">
+                                Show correct answers
+                            </p>
+
+                            <p class="text-xs text-gray-500 mt-1">
+                                Allow students to see which answers were correct after submission.
+                            </p>
+
+                        </div>
+
+                    </label>
+
+
+                    <!-- Random Questions -->
+                    <label class="flex items-start gap-3 p-4 border border-gray-200
+                                  rounded-lg cursor-pointer hover:bg-gray-50 transition">
+
+                        <input
+                            type="checkbox"
+                            name="random_questions"
+                            class="mt-1 w-4 h-4 text-blue-600 border-gray-300
+                                   rounded focus:ring-blue-500">
+
+                        <div>
+
+                            <p class="text-sm font-medium text-gray-800">
+                                Randomize questions
+                            </p>
+
+                            <p class="text-xs text-gray-500 mt-1">
+                                Show questions in a different order for each attempt.
+                            </p>
+
+                        </div>
+
+                    </label>
+
+                </div>
+
+
+                <!-- Bottom Actions -->
+                <div class="flex flex-col-reverse sm:flex-row sm:justify-end gap-3
+                            mt-8 pt-6 border-t border-gray-200">
+
+                    <!-- Cancel -->
+                    <a href="#"
+                       class="inline-flex items-center justify-center px-5 py-3
+                              border border-gray-300 rounded-lg
+                              text-sm font-medium text-gray-700
+                              hover:bg-gray-50 transition">
+
+                        Cancel
+
+                    </a>
+
+
+                    <!-- Create Quiz -->
+                    <button
+                        type="submit"
+                        class="inline-flex items-center justify-center gap-2
+                               px-6 py-3
+                               bg-blue-600 hover:bg-blue-700
+                               text-white text-sm font-medium
+                               rounded-lg shadow-sm
+                               transition">
+
+                        Create Quiz
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="w-5 h-5"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M9 5l7 7-7 7"/>
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
